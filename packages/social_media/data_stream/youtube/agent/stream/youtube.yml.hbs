@@ -1,0 +1,49 @@
+config_version: 2
+interval: {{interval}}
+request.url: https://www.googleapis.com/youtube/v3/search
+request.method: GET
+{{#if http_client_timeout}}
+request.timeout: {{http_client_timeout}}
+{{/if}}
+request.transforms:
+  - set:
+      target: url.params.channelId
+      value:  {{channel_id}}
+  - set:
+      target: url.params.maxResults
+      value:  {{max_results}}
+  - set:
+      target: url.params.key
+      value:  {{api_key}}
+{{!-- response.pagination:
+  - set:
+      target: url.params.pageToken
+      value : '[[.last_response.body.nextPageToken]]'
+      fail_on_template_error: true --}}
+chain:
+  - step:
+      request.url: https://www.googleapis.com/youtube/v3/videos?id=$.items[:].id.videoId
+      request.method: GET
+      replace: $.items[:].id.videoId
+      request.transforms:
+        - set:
+            target: url.params.key
+            value:  {{api_key}}
+        - set:
+            target: url.params.part
+            value: statistics,snippet
+
+tags:
+{{#if preserve_original_event}}
+  - preserve_original_event
+{{/if}}
+{{#each tags as |tag i|}}
+  - {{tag}}
+{{/each}}
+{{#contains "forwarded" tags}}
+publisher_pipeline.disable_host: true
+{{/contains}}
+{{#if processors}}
+processors:
+{{processors}}
+{{/if}}

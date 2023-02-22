@@ -1,0 +1,137 @@
+---
+description: Pipeline for parsing Social Media - Youtube logs
+processors:
+- set:
+    field: ecs.version
+    value: "8.5.1"
+- rename:
+      field: message
+      target_field: event.original
+      ignore_missing: true
+- json:
+    field: event.original
+    target_field: json
+    on_failure:
+    - append:
+        field: error.message
+        value: '{{{_ingest.on_failure_message}}}'
+
+- foreach:
+      field: json.items
+      if: ctx.json?.items instanceof List
+      processor:
+         set:
+            field: social_media.youtube.video.id
+            copy_from: _ingest._value.id
+            on_failure:
+                - set:
+                    field: error.message
+                    value: "{{ _ingest.on_failure_message }}"
+- foreach:
+      field: json.items
+      if: ctx.json?.items instanceof List
+      processor:
+          set:
+            field: social_media.youtube.video.publishedAt
+            copy_from: _ingest._value.snippet.publishedAt
+            on_failure:
+                - set:
+                    field: error.message
+                    value: "{{ _ingest.on_failure_message }}"   
+- foreach:
+      field: json.items
+      if: ctx.json?.items instanceof List
+      processor:
+         set:
+            field: social_media.youtube.channelId
+            copy_from: _ingest._value.snippet.channelId
+            on_failure:
+                - set:
+                    field: error.message
+                    value: "{{ _ingest.on_failure_message }}" 
+- foreach:
+      field: json.items
+      if: ctx.json?.items instanceof List
+      processor:
+         set:
+            field: social_media.youtube.video.title
+            copy_from: _ingest._value.snippet.title
+            on_failure:
+                - set:
+                    field: error.message
+                    value: "{{ _ingest.on_failure_message }}" 
+- foreach:
+      field: json.items
+      if: ctx.json?.items instanceof List
+      processor:
+         set:
+            field: social_media.youtube.video.audio_language
+            copy_from: _ingest._value.snippet.defaultAudioLanguage
+            on_failure:
+                - set:
+                    field: error.message
+                    value: "{{ _ingest.on_failure_message }}" 
+- foreach:
+      field: json.items
+      if: ctx.json?.items instanceof List
+      processor:
+         convert:
+            field: _ingest._value.statistics.viewCount
+            target_field: social_media.youtube.video.viewCount
+            type: long
+            on_failure:
+                - set:
+                    field: error.message
+                    value: "{{ _ingest.on_failure_message }}"
+- foreach:
+      field: json.items
+      if: ctx.json?.items instanceof List
+      processor:
+         convert:
+            field: _ingest._value.statistics.likeCount
+            target_field: social_media.youtube.video.likeCount
+            type: long
+            on_failure:
+                - set:
+                    field: error.message
+                    value: "{{ _ingest.on_failure_message }}"
+- foreach:
+      field: json.items
+      if: ctx.json?.items instanceof List
+      processor:
+         convert:
+            field: _ingest._value.statistics.favoriteCount
+            target_field: social_media.youtube.video.favoriteCount
+            type: long
+            on_failure:
+                - set:
+                    field: error.message
+                    value: "{{ _ingest.on_failure_message }}"
+- foreach:
+      field: json.items
+      if: ctx.json?.items instanceof List
+      processor:
+         convert:
+            field: _ingest._value.statistics.commentCount
+            target_field: social_media.youtube.video.commentCount
+            type: long
+            on_failure:
+                - set:
+                    field: error.message
+                    value: "{{ _ingest.on_failure_message }}"
+
+  ###########
+  # Cleanup #
+  ###########
+- remove: 
+    field: '@metadata'
+    ignore_missing: true
+- remove: 
+    field: host
+    ignore_missing: true
+# - remove: 
+#     field: _temp_
+#     ignore_missing: true
+- remove: 
+    field: json
+    ignore_missing: true

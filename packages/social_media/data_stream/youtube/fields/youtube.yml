@@ -1,0 +1,47 @@
+- name: social_media.youtube
+  type: group
+  description: |
+    `youtube` contains information about youtube channel statistics.
+  release: experimental
+  fields:
+    - name: channelId
+      type: keyword
+      description: |
+        Youtube Channel Id
+    - name: video
+      type: group
+      description: |
+        Youtube video details
+      fields:
+        - name: id
+          type: keyword
+          description: |
+            Video id.
+        - name: audio_language
+          type: keyword
+          description: |
+            Language of content.
+        - name: commentCount
+          type: long
+          description: |
+            No. of comments for video.
+        - name: favoriteCount
+          type: long
+          description: |
+            No. of favourites for video.
+        - name: likeCount
+          type: long
+          description: |
+            No. of likes for video.
+        - name: publishedAt
+          type: date
+          description: |
+            Video publish time.
+        - name: title
+          type: keyword
+          description: |
+            Video title.
+        - name: viewCount
+          type: long
+          description: |
+            No. of views for video.

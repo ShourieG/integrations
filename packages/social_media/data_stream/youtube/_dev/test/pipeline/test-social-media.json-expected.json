@@ -1,0 +1,43 @@
+{
+    "expected": [
+        {
+            "@timestamp": "2023-02-21T07:20:29.907Z",
+            "agent": {
+                "ephemeral_id": "cf2286a5-f1ff-41ee-9c49-f4e88d0be038",
+                "id": "4af78b28-a54d-4ec9-a76d-b67f9abbf77d",
+                "name": "Shouries-MacBook-Pro.local",
+                "type": "filebeat",
+                "version": "8.7.0"
+            },
+            "ecs": {
+                "version": "8.5.1"
+            },
+            "event": {
+                "created": "2023-02-21T07:20:29.907Z",
+                "original": "{\"etag\":\"snMRVaVsJ1GZlb7KgdDwjZurmMo\",\"items\":[{\"etag\":\"TSQ8wAnjY-GPB12q7Gy_thopF1I\",\"id\":\"-NwLtn2Y3x4\",\"kind\":\"youtube#video\",\"snippet\":{\"categoryId\":\"10\",\"channelId\":\"UCZU9T1ceaOgwfLRq7OKFU4Q\",\"channelTitle\":\"Linkin Park\",\"defaultAudioLanguage\":\"en-US\",\"description\":\"\\\"Red Bull goes inside the 2013 LP Underground Sessions recorded at Red Bull Studios in Los Angeles: http://win.gs/1jpudnb\\n \\n The LPU Sessions is a one of a kind collaborative music-making project, inviting LPU members to submit their songs for a chance to record in the studio with Linkin Park.\\n \\n Join the LP Underground here: http://LPUnderground.com\\n\\niTunes: http://go.lprk.co/ml/3p1/\\nSpotify: http://go.lprk.co/ml/3tt/\\nAmazon: http://go.lprk.co/ml/3qw/\\nGoogle Play: http://go.lprk.co/ml/3qx/\\n \\nYouTube Subscribe: http://bit.ly/1EBzxN2\\nFacebook: http://lprk.co/facebook\\nInstagram: http://lprk.co/instagram\\nTwitter: http://lprk.co/twitter\\nWeb: https://www.linkinpark.com/\\nhttp://musicforrelief.org\\n\\nOfficial Linkin Park Merch: http://go.lprk.co/ml/3pj/\",\"liveBroadcastContent\":\"none\",\"localized\":{\"description\":\"\\\"Red Bull goes inside the 2013 LP Underground Sessions recorded at Red Bull Studios in Los Angeles: http://win.gs/1jpudnb\\n \\n The LPU Sessions is a one of a kind collaborative music-making project, inviting LPU members to submit their songs for a chance to record in the studio with Linkin Park.\\n \\n Join the LP Underground here: http://LPUnderground.com\\n\\niTunes: http://go.lprk.co/ml/3p1/\\nSpotify: http://go.lprk.co/ml/3tt/\\nAmazon: http://go.lprk.co/ml/3qw/\\nGoogle Play: http://go.lprk.co/ml/3qx/\\n \\nYouTube Subscribe: http://bit.ly/1EBzxN2\\nFacebook: http://lprk.co/facebook\\nInstagram: http://lprk.co/instagram\\nTwitter: http://lprk.co/twitter\\nWeb: https://www.linkinpark.com/\\nhttp://musicforrelief.org\\n\\nOfficial Linkin Park Merch: http://go.lprk.co/ml/3pj/\",\"title\":\"LPU Sessions @ Red Bull Studios (Change by Beta State) | LPTV #106 | Linkin Park\"},\"publishedAt\":\"2014-05-09T17:17:42Z\",\"tags\":[\"Red Bull\",\"Red Bull Studios\",\"Linkin Park (Musical Group)\",\"Beta State\",\"LPU Sessions\",\"Linkin Park Underground\",\"Red Bull Music\",\"Linkin Park LPU\",\"Linkin Park LPU Sessions\",\"Linkin Park Beta State\",\"Linkin Park Behind The Scenes\",\"Behind The Scenes\",\"Change Beta State\",\"Beta State Change\",\"Linkin Park Red Bull\",\"Red Bull Linkin Park\",\"Linkin Park Red Bull Studios\",\"LPTV\",\"LPTV 2014\",\"Linkin Park LPTV\",\"LPTV Linkin Park\",\"LPTV LPU\",\"LPTV Red Bull Studios\",\"LPTV Red Bull\",\"Linkin Park Change\"],\"thumbnails\":{\"default\":{\"height\":90,\"url\":\"https://i.ytimg.com/vi/-NwLtn2Y3x4/default.jpg\",\"width\":120},\"high\":{\"height\":360,\"url\":\"https://i.ytimg.com/vi/-NwLtn2Y3x4/hqdefault.jpg\",\"width\":480},\"maxres\":{\"height\":720,\"url\":\"https://i.ytimg.com/vi/-NwLtn2Y3x4/maxresdefault.jpg\",\"width\":1280},\"medium\":{\"height\":180,\"url\":\"https://i.ytimg.com/vi/-NwLtn2Y3x4/mqdefault.jpg\",\"width\":320},\"standard\":{\"height\":480,\"url\":\"https://i.ytimg.com/vi/-NwLtn2Y3x4/sddefault.jpg\",\"width\":640}},\"title\":\"LPU Sessions @ Red Bull Studios (Change by Beta State) | LPTV #106 | Linkin Park\"},\"statistics\":{\"commentCount\":\"159\",\"favoriteCount\":\"0\",\"likeCount\":\"4145\",\"viewCount\":\"184268\"}}],\"kind\":\"youtube#videoListResponse\",\"pageInfo\":{\"resultsPerPage\":1,\"totalResults\":1}}"
+            },
+            "input": {
+                "type": "httpjson"
+            },
+            "social_media": {
+                "youtube": {
+                    "channelId": "UCZU9T1ceaOgwfLRq7OKFU4Q",
+                    "video": {
+                        "audio_language": "en-US",
+                        "commentCount": 159,
+                        "favoriteCount": 0,
+                        "id": "-NwLtn2Y3x4",
+                        "likeCount": 4145,
+                        "publishedAt": "2014-05-09T17:17:42Z",
+                        "title": "LPU Sessions @ Red Bull Studios (Change by Beta State) | LPTV #106 | Linkin Park",
+                        "viewCount": 184268
+                    }
+                }
+            },
+            "tags": [
+                "social-media-youtube",
+                "preserve_original_event"
+            ]
+        }
+    ]
+}

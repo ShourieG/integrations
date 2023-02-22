@@ -1,0 +1,18 @@
+- external: ecs
+  name: data_stream.type
+- external: ecs
+  name: data_stream.dataset
+- external: ecs
+  name: data_stream.namespace
+- name: event.module
+  type: constant_keyword
+  description: Event module
+  value: social_media
+- name: event.dataset
+  type: constant_keyword
+  description: Event dataset
+  value: social_media.youtube
+- external: ecs
+  name: "@timestamp"
+- external: ecs
+  name: tags

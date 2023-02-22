@@ -1,0 +1,68 @@
+{
+    "@timestamp": "2023-02-15T09:23:05.346Z",
+    "@metadata": {
+        "beat": "filebeat",
+        "type": "_doc",
+        "version": "8.7.0"
+    },
+    "ecs": {
+        "version": "8.0.0"
+    },
+    "event": {
+        "created": "2023-02-15T09:23:05.346Z"
+    },
+    "message": "{\"etag\":\"GAjOShfSGq5_DOCKoHPSYdcAkYI\",\"items\":[{\"etag\":\"1-4MJJKS24dh9bSc8qPcoxjnI_w\",\"id\":\"jfzJo8TBQfw\",\"kind\":\"youtube#video\",\"statistics\":{\"commentCount\":\"648\",\"favoriteCount\":\"0\",\"likeCount\":\"2654\",\"viewCount\":\"924445\"}}],\"kind\":\"youtube#videoListResponse\",\"pageInfo\":{\"resultsPerPage\":1,\"totalResults\":1}}",
+    "input": {
+        "type": "httpjson"
+    },
+    "host": {
+        "architecture": "arm64",
+        "os": {
+            "build": "21D62",
+            "type": "macos",
+            "platform": "darwin",
+            "version": "12.2.1",
+            "family": "darwin",
+            "name": "macOS",
+            "kernel": "21.3.0"
+        },
+        "id": "EE9F7196-A447-57D6-BFF8-F2C8B3519EA1",
+        "ip": [
+            "fe80::f861:44ff:febe:ac18",
+            "fe80::f861:44ff:febe:ac17",
+            "fe80::f861:44ff:febe:ac16",
+            "fe80::1099:990d:a283:6602",
+            "192.168.29.95",
+            "2405:201:d035:3062:18b2:1632:f99c:53b9",
+            "2405:201:d035:3062:89d6:6d25:7af2:4238",
+            "fe80::f8cf:74ff:fed9:f2cf",
+            "fe80::f8cf:74ff:fed9:f2cf",
+            "fe80::c019:e284:688:95c0",
+            "fe80::5819:a137:b6bf:c54a",
+            "fe80::ce81:b1c:bd2c:69e"
+        ],
+        "mac": [
+            "36-81-BD-75-C7-80",
+            "36-81-BD-75-C7-84",
+            "36-81-BD-75-C7-88",
+            "BC-D0-74-02-6F-DB",
+            "BE-D0-74-02-6F-DB",
+            "FA-61-44-BE-AC-16",
+            "FA-61-44-BE-AC-17",
+            "FA-61-44-BE-AC-18",
+            "FA-61-44-BE-AC-F6",
+            "FA-61-44-BE-AC-F7",
+            "FA-61-44-BE-AC-F8",
+            "FA-CF-74-D9-F2-CF"
+        ],
+        "hostname": "Shouries-MacBook-Pro.local",
+        "name": "Shouries-MacBook-Pro.local"
+    },
+    "agent": {
+        "id": "1318b269-0fd2-4bc7-ac74-7500862a22b5",
+        "name": "Shouries-MacBook-Pro.local",
+        "type": "filebeat",
+        "version": "8.7.0",
+        "ephemeral_id": "ac52198b-9dfa-452c-98e9-58e2419c2ffa"
+    }
+}
