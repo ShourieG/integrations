@@ -1,7 +1,7 @@
 # newer versions go on top
 - version: "1.1.2"
   changes:
-    - description: Preserve non-numeric `proto` values (e.g. `tcp`) as ECS `network.transport` instead of failing the `convert_proto_to_long` processor in the alert data stream.
+    - description: Map alert `proto` to ECS `network.transport` and `network.iana_number` instead of failing on protocol names.
       type: bugfix
       link: https://github.com/elastic/integrations/pull/20005
 - version: "1.1.1"

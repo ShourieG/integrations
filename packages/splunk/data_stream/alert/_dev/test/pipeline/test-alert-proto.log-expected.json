@@ -17,6 +17,7 @@
             },
             "message": "1700000000, search_name=\"Example Detection Rule\", app=\"web-browsing\", proto=\"tcp\"",
             "network": {
+                "iana_number": "6",
                 "transport": "tcp"
             },
             "related": {
@@ -72,6 +73,10 @@
                 "name": "splunk-server"
             },
             "message": "1700000000, search_name=\"Example Numeric Proto Rule\", app=\"dns\", proto=\"6\"",
+            "network": {
+                "iana_number": "6",
+                "transport": "tcp"
+            },
             "related": {
                 "hosts": [
                     "splunk-server"
